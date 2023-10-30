@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" th:replace="normal/UserBase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+
+<body>
+	<section><br /><br /> <br /> <br />
+		<div class="card mt-3">
+			<div class="card-body">
+				<img style="height: 20%; width: 20%; border-radius: 10%;" th:src="@{'/img/'+${user.imageUrl}}"
+					alt="profile_pic" /><span style="font-size: xx-large; font-weight: 900;"> Start adding your contacts
+				</span>
+				<hr />
+
+				<span><a class="btn btn-primary btn-block" th:href="@{/user/add-contacts}"> Add Contacts</a></span>
+			</div>
+			<hr />
+			<input type="text" placeholder="Enter Amount $ " id="amount" class="form-control" />
+			<br />
+			<button class="text-center btn btn-success" onclick="paymentStart()"> Pay </button>
+			<br />
+			
+		</div>
+		<section>
+</body>
+
+</html>

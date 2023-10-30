@@ -1,0 +1,1 @@
+1. we have used @Column(unique = true) in User, how to handel the exception and let the user know that email already exist 

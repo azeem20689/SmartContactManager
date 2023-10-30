@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" th:replace="normal/UserBase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+
+<body>
+	<section>
+		<h3></h3>
+
+		<div class="card mr-3 ml-3 ">
+			<div class="card-body" th:if="${contact}">
+				<div class="container text-center ">
+					<img style="height: 20%; width: 20%; border-radius: 10%;" th:src="@{'/img/'+${contact.image}}"
+						alt="profile_pic" />
+		
+					<h3><span th:text="${contact.name}"></span> ~ (<span th:text="${contact.secondName}"></span>)</h3>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">ID</th>
+								<td th:text="${contact.cId}">Mark</td>
+
+							</tr>
+							<tr>
+								<th scope="row">Phone</th>
+								<td th:text="${contact.phone}">Mark</td>
+
+							</tr>
+							<tr>
+								<th scope="row">Email</th>
+								<td th:text="${contact.email}">Jacob</td>
+
+							</tr>
+							<tr>
+								<th scope="row">Last Name</th>
+								<td th:text="${contact.secondName}"></td>
+
+							</tr>
+							<tr>
+								<th scope="row">Work</th>
+								<td th:text="${contact.work}"></td>
+
+							</tr>
+
+						</tbody>
+					</table>
+					<h5 th:text="${contact.description}"></h5>
+					<button th:onclick="|updateContact(${contact.cId})|"
+						class="btn btn-primary btn-block">Update</button>
+					<button th:onclick="|deleteContact(${contact.cId})|"
+						class="btn btn-danger btn-block">Delete</button>
+				</div>
+			</div>
+		</div>
+		<section>
+</body>
+
+</html>

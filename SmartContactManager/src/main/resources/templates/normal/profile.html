@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" th:replace="normal/UserBase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+
+<body>
+	<section>
+		
+		<div class="card mr-3 ml-3 ">
+			
+				<div class="container text-center ">
+					<img style="height: 20%; width: 20%; border-radius: 10%;" th:src="@{'/img/'+${user.imageUrl}}"
+						alt="profile_pic" />
+					<h3><span th:text="${user.name}"></h3>
+
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">ID</th>
+								<td th:text="${user.Id}">Mark</td>
+
+							</tr>
+							<tr>
+								<th scope="row">Email</th>
+								<td th:text="${user.email}">Jacob</td>
+
+							</tr>
+							<tr>
+								<th scope="row">Active Status</th>
+								<td th:if="${user.enabel}">Active</td>
+								<td th:if="${not user.enabel}">Active</td>
+
+							</tr>
+						
+						</tbody>
+					</table>
+					<h5 th:text="${user.about}"></h5>
+				</div>
+			</div>
+		</div>
+		<section>
+</body>
+
+</html>
